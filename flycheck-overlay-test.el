@@ -17,6 +17,7 @@ Returns a list of created errors for verification."
     (insert "Line 3: This line has an info message\n")
     (insert "Line 4: Multiple errors on one line\n")
     (insert "\n")
+    (insert "\n")
     
     ;; Create error objects
     (push (flycheck-error-new-at 0 6 'error "Error at line 0 column 6") errors)
@@ -25,7 +26,7 @@ Returns a list of created errors for verification."
     (push (flycheck-error-new-at 3 6 'info "Info at line 3 and column 6") errors)
     (push (flycheck-error-new-at 4 6 'error "Error at line 4 column 6") errors)
     (push (flycheck-error-new-at 4 20 'warning "Warning at line 4 column 20") errors)
-    (push (flycheck-error-new-at 5 0 'warning "Extra blank line detected") errors)
+    (push (flycheck-error-new-at 6 0 'warning "Extra blank line detected") errors)
 
     ;; Display the errors
     (flycheck-overlay--display-errors errors)
